@@ -11,7 +11,7 @@ body {
 
 /* Tyylit pääsisällön kontille */
 .container {
-    background-image: url('https://raw.githubusercontent.com/Wylsac/Projekti-2b/main/water-1330252_1920.jpg');
+    background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0.957), rgba(132, 55, 158, 0.726)), url('https://raw.githubusercontent.com/Wylsac/Projekti-2b/main/morning-glory-3717074_1920.jpg');
     padding: 20px;
     border-radius: 10px;
     text-align: center;
