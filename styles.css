@@ -1,0 +1,194 @@
+/* Ulkoasun tyylit sivun yleiselle asettelulle */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #8983df, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Tyylit pääsisällön kontille */
+.container {
+    background-image: url('/Users/legsei/Downloads/water-1330252_1920.jpg');
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tyylit pääotsikolle */
+h1 {
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+/* Tyylit lomakkeelle */
+form {
+    margin-bottom: 20px;
+}
+
+/* Tyylit tekstisyötteelle */
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 106px); /* Pienennä syöttökentän leveys */
+    margin-right: 6px; /* Väli syöttökentän ja painikkeen välillä */
+}
+
+/* Tyylit painikkeille */
+button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover-efekti painikkeille */
+button:hover {
+    background-color: #00CED1;
+}
+
+/* Tyylit todo-alkioille */
+.todo-item {
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 35px;
+    text-align: left; /* Tasaa tekstin vasempaan reunaan */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Lisää tilan tasaus elementtien välille */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Pehmeät siirtymät opacity- ja transform-ominaisuuksille */
+}
+
+/* Tyylit valmiille todo-alkioille */
+.todo-item.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Tyylit todo-alkion valintaruudulle */
+.todo-item::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Tyylit valmiille todo-alkion valintaruudulle */
+.todo-item.completed::before {
+    content: '\2714';
+    color: green;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tyylit poista-painikkeelle */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff0000;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+/* Hover-efekti poista-painikkeelle */
+.delete-btn:hover {
+    color: #b30000;
+}
+
+/* Tyylit virheviestille */
+#error {
+    color: red;
+}
+
+.tabs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Keskitä välilehdet vaakasuunnassa */
+}
+
+.tabs li {
+    margin: 0 5px; /* Lisää hieman väliä välilehtien välille */
+}
+
+.tabs button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    background-color: #969b9b;
+}
+
+#todo-summary {
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(228, 60, 60, 0.3); /* Lisää varjo "jäljellä oleva tehtävä" -tekstiin */
+    margin-bottom: 10px;
+}
+
+#todo-list {
+    padding: 0;
+    list-style: none;
+    margin-top: 20px; /* Yläväli */
+    text-align: left; /* Tasaa tekstin vasempaan reunaan */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Keskitä listan elementit vaakasuunnassa */
+    width: 100%;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards; /* Animaatio kestää 0,5 sekuntia */
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.tabs button.active {
+    background-color: #007bff; /* Aktiivisen painikkeen taustaväri */
+}
